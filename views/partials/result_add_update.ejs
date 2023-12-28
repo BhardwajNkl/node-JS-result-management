@@ -1,0 +1,35 @@
+<div id="add-result-area" style="display: none;">
+    <b>Add new result</b>
+    <form id="add-form" action="" method="get">
+        Roll No. *
+        <input type="text" name="rollNumber" class="form-control" required>
+        Student Name *
+        <input type="text" name="studentName" class="form-control" required>
+        D.O.B *
+        <input type="date" name="dob" class="form-control" required>
+        Marks *
+        <input type="text" name="marks" class="form-control" required>
+        <button id="add-result-cancel" type="button" class="btn btn-secondary mt-1">Cancel</button>
+        <button type="submit" id="add-result-fire" class="ms-2 btn btn-primary mt-1">Add Result</button>
+    </form>
+</div>
+
+<div id="edit-result-area" style="display: none;">
+    <b>Update result</b>
+    <form id="edit-form" data-resultId="" action="/result" method="get">
+        Roll No.
+        <input type="text" name="rollNumber" class="form-control" disabled>
+        Student Name *
+        <input type="text" name="studentName" class="form-control" required>
+        D.O.B *
+        <input type="date" name="dob" class="form-control" readonly>
+        Marks *
+        <input type="text" name="marks" class="form-control" required>
+        <button id="edit-result-cancel" type="button" class="btn btn-secondary mt-1">Cancel</button>
+        <button id="edit-result-fire" type="submit" class="ms-2 btn btn-primary mt-1">Update Result</button>
+    </form>
+</div>
+
+<div id="status-text-area" style="display: none;">
+    Everything is fine
+</div>

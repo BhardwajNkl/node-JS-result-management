@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Not Found</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .error-container {
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 25px;
+            color: #e74c3c;
+        }
+
+        .error-message {
+            font-size: 30px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        button{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-message">Oops! Page not found.</div>
+        <button id="back-button">Go Back</button>
+    </div>
+
+    <script>
+        const backButton = document.querySelector("#back-button");
+        backButton.addEventListener("click", ()=>{
+            window.history.back();
+        })
+    </script>
+</body>
+</html>

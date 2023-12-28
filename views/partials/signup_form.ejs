@@ -1,0 +1,23 @@
+<div class="login-section">
+    <h3>Register</h3>
+    <form action="/signup" method="post">
+        Register as *
+        <% if(message){ %>
+            <div class="<%= className %>">
+                <%= message %>
+            </div>
+        <% } %>
+        <select class="form-select mb-2" name="roleName">
+            <option value="STUDENT">Student</option>
+            <option value="TEACHER">Teacher</option>
+        </select>
+        Name *<br>
+        <input type="text" name="name" placeholder="John" class="form-control mb-2" required>
+        Email *<br>
+        <input type="text" name="email" placeholder="john@gmail.com" class="form-control mb-2" required>
+        Password *<br>
+        <input type="password" name="password" class="form-control mb-2" required>
+        <button type="submit" class="btn btn-primary mt-3">Register</button><br>
+        <span class="text-centre">Already registered to our platform? <a href="/signin">signin</a></span>
+    </form>
+</div>

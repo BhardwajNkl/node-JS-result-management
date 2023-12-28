@@ -1,0 +1,35 @@
+<div class="resultList">
+    <table>
+        <tr>
+            <th>Roll No.</th>
+            <th>Student Name</th>
+            <th>D.O.B</th>
+            <th>Marks</th>
+            <th>Actions</th>
+        </tr>
+        <% results.forEach(result=> { %>
+            <tr id=<%= result.resultId %>>
+                <td>
+                    <%= result.rollNumber %>
+                </td>
+                <td>
+                    <%= result.studentName %>
+                </td>
+                <td>
+                    <%= result.dob %>
+                </td>
+                <td>
+                    <%= result.marks %>
+                </td>
+                <td><span class="edit-btn" data-resultId=<%=result.resultId %> class="btn"><img src="../images/edit.png"
+                            width="30px" height="auto"></span>
+                    <span class="delete-btn" data-resultId=<%=result.resultId %>
+                        class="ms-1 btn"><img src="../images/delete.png" width="30px" height="auto"></span>
+                </td>
+            </tr>
+            <% }); %>
+                <tr>
+
+                </tr>
+    </table>
+</div>

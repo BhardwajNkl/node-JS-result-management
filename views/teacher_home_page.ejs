@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home | Teacher</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='../bootstrap/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/teacher_home_page.css">
+
+</head>
+
+<body>
+    <div class="container mt-1">
+        <%- include('./partials/header.ejs') %>
+    </div>
+
+    <div class="container mt-3">
+
+        <%- include('./partials/logged_user.ejs') %>
+
+            <button id="add-result" class="btn btn-sm btn-primary mt-3 mb-1">Add New Result</button>
+            <div class="row">
+                <div class="col-8">
+                    <%- include('./partials/result_list.ejs') %>
+                </div>
+                <div class="col-4">
+                    <!-- here we provide forms for adding and updating results -->
+                    <!-- Initially, none of the forms are displayed. -->
+                    <!-- Also, here we show some status text after add or update operations -->
+                    
+                    <%- include('./partials/result_add_update.ejs') %>
+
+                </div>
+            </div>
+    </div>
+
+    <!-- The below script contains code for 'add result' button -->
+    <script src="../js/teacher_home_page.js"></script>
+
+    <!-- The below script contains code for 'log out' button -->
+    <script src="../js/log_out.js"></script>
+
+</body>
+
+</html>

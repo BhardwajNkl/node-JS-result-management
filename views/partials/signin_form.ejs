@@ -1,0 +1,22 @@
+<div class="login-section">
+    <h3>Login</h3>
+    <form action="/signin" method="post">
+        <% if(message){ %>
+            <div class="alert alert-danger">
+                <%= message %>
+            </div>
+        <% } %>
+        Login as *
+        <select class="form-select mb-2" name="roleName">
+            <option value="STUDENT">Student</option>
+            <option value="TEACHER">Teacher</option>
+        </select>
+        Email *<br>
+        <input type="text" name="email" placeholder="john@gmail.com" class="form-control mb-2" required>
+        Password *<br>
+        <input type="password" name="password" class="form-control mb-2" required>
+        <a href="">Forgot password?</a> <br>
+        <button type="submit" class="btn btn-primary mt-3">Login</button><br>
+        <span class="text-centre">New to our platform? <a href="signup">signup</a></span>
+    </form>
+</div>

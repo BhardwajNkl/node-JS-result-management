@@ -1,0 +1,23 @@
+.resultList{
+    background-color: skyblue;
+    color: white;
+}
+
+th {
+    color: red;
+}
+
+td{
+    font-size: 18px;;
+}
+
+table, th, td{
+    border: 1px solid; 
+    border-collapse: collapse;
+}
+
+table{
+    width:100%;
+    text-align: center;
+}
+
