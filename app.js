@@ -14,6 +14,8 @@ const bodyParser = require('body-parser');
 
 const cookieParser = require('cookie-parser');
 
+require('dotenv').config();
+
 const app = express();
 
 //setting static files directories
@@ -52,8 +54,9 @@ sequelize.sync({ force: true }).then(() => {
         ]
     ).then((data) => {
         console.log("Roles persisted! ");
-        app.listen(3000, () => {
-            console.log("server started on port 3000!");
+        const appPort = process.env.APP_PORT || 3000;
+        app.listen(appPort, () => {
+            console.log(`server started on port: ${appPort}`);
         });
     }).catch((err) => {
         console.log("Error in persisting roles! Roles already created.");
