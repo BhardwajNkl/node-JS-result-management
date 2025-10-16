@@ -42,25 +42,26 @@ app.use((req,res)=>{
 })
 
 // Before starting the server we want connect to the database and also persist the roles which will be used by the application.
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync().then(async () => {
     console.log("connected to database!");
-    Role.bulkCreate(
-        [{
-            roleName: "STUDENT"
-        },
-        {
-            roleName: "TEACHER"
+    try {
+        const rolesCount = await Role.count();
+        if (rolesCount === 0) {
+            await Role.bulkCreate([
+                { roleName: "STUDENT" },
+                { roleName: "TEACHER" }
+            ]);
+            console.log("Roles persisted!");
+        } else {
+            console.log("Roles already exist. Skipping creation.");
         }
-        ]
-    ).then((data) => {
-        console.log("Roles persisted! ");
-        const appPort = process.env.APP_PORT || 3000;
-        app.listen(appPort, () => {
-            console.log(`server started on port: ${appPort}`);
-        });
-    }).catch((err) => {
-        console.log("Error in persisting roles! Roles already created.");
-    })
+    } catch (err) {
+        console.log("Error while checking or creating roles:", err);
+    }
+    const appPort = process.env.APP_PORT || 3000;
+    app.listen(appPort, () => {
+        console.log(`server started on port: ${appPort}`);
+    });
 }).catch(err => {
     console.log("Error in connecting to database!");
 });
